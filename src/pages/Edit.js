@@ -1,7 +1,12 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Edit = () => {
+  //navigate의 기능 : link 태그를 선택하지 않아도 원하는 페이지로 보낼 수 있게 함
+  //ex) 비로그인 사용자가 로그인 되었을 때 보여주는 페이지로 가려고 할 때 로그인페이지로 보냄
   const navigate = useNavigate();
+
+  //QueryString 담은 배열
+  //useSearchParams = react router의 hook 이다.
   const [searchParams, setSearchParams] = useSearchParams();
 
   const id = searchParams.get("id");
@@ -22,15 +27,13 @@ const Edit = () => {
           navigate("/");
         }}
       >
-        {" "}
-        Home으로 이동!{" "}
+        Home으로 이동!
       </button>
       <button
         onClick={() => {
           navigate(-1);
         }}
       >
-        {" "}
         뒤로가기{" "}
       </button>
     </div>
