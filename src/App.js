@@ -26,6 +26,7 @@ const reducer = (state, action) => {
       newState = state.map((element) =>
         element.id === action.data.id ? { ...action.data } : it
       );
+      break;
     }
     default:
       return state;
@@ -36,8 +37,47 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "일기 1번",
+    date: 1669300827992,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "일기 2번",
+    date: 1669300827993,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "일기 3번",
+    date: 1669300827993,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "일기 4번",
+    date: 1669300827994,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "일기 5번",
+    date: 1669300827995,
+  },
+  {
+    id: 6,
+    emotion: 6,
+    content: "일기 6번",
+    date: 1669300827996,
+  },
+];
+
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const [data, dispatch] = useReducer(reducer, dummyData);
 
   const dataId = useRef(0);
   // CREATE
@@ -76,7 +116,6 @@ function App() {
         <BrowserRouter>
           {/* 브라우저 URL과 react app을 연결하는 기능을 하는 <BrowserRouter>로 감싸줌 */}
           <div className="App">
-            <h2> App.js</h2>
             <Routes>
               {/* <Routes> 기능을 이용해 페이지 연동  */}
               <Route path="/" element={<Home />} />
