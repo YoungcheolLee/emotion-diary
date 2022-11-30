@@ -24,7 +24,7 @@ const reducer = (state, action) => {
     }
     case "EDIT": {
       newState = state.map((element) =>
-        element.id === action.data.id ? { ...action.data } : it
+        element.id === action.data.id ? { ...action.data } : element
       );
       break;
     }
@@ -42,31 +42,31 @@ const dummyData = [
     id: 1,
     emotion: 1,
     content: "오늘의 일기 1번",
-    date: 1669300827992,
+    date: 1669822141495,
   },
   {
     id: 2,
     emotion: 2,
     content: "일기 2번",
-    date: 1669300827993,
+    date: 1669822141496,
   },
   {
     id: 3,
     emotion: 3,
     content: "일기 3번",
-    date: 1669300827993,
+    date: 1669822141497,
   },
   {
     id: 4,
     emotion: 4,
     content: "일기 4번",
-    date: 1669300827994,
+    date: 1669822141498,
   },
   {
     id: 5,
     emotion: 5,
     content: "일기 5번",
-    date: 1669300827995,
+    date: 1669822141499,
   },
 ];
 
@@ -114,7 +114,7 @@ function App() {
               {/* <Routes> 기능을 이용해 페이지 연동  */}
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>

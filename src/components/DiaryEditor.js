@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "../App";
 
@@ -47,7 +47,7 @@ const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
 };
 
-const DiaryEditor = () => {
+const DiaryEditor = ({ isEdit, originData }) => {
   // 일기 내용을 작성하지 않으면 포커싱 되게 하는 기능
   const contentRef = useRef();
 
@@ -61,7 +61,7 @@ const DiaryEditor = () => {
   const [date, setDate] = useState(getStringDate(new Date()));
 
   // DiaryDispatchContext로 부터 App.js의 onCreate 함수를 받아오는 구문
-  const { onCreate } = useContext(DiaryDispatchContext);
+  const { onCreate, onEdit } = useContext(DiaryDispatchContext);
 
   //감정 이미지 선택 시 클릭 했을 때 발생하는 메서드
   const handleClickEmote = (emotion) => {
@@ -74,8 +74,21 @@ const DiaryEditor = () => {
   // 작성하기 버튼 클릭 시 수행되는 메서드
   const handleSubmit = () => {
     if (content.length < 1) {
+      alert("최소 1글자 이상 입력해주세요.");
       contentRef.current.focus();
       return;
+    }
+
+    if (
+      window.confirm(
+        isEdit ? "일기를 수정하시겠습니까?" : "새로운 일기를 작성하시겠습니까?"
+      )
+    ) {
+      if (!isEdit) {
+        onCreate(date, content, emotion);
+      } else {
+        onEdit(originData.id, date, content, emotion);
+      }
     }
 
     onCreate(date, content, emotion);
@@ -87,10 +100,19 @@ const DiaryEditor = () => {
     navigate("/", { replace: true });
   };
 
+  // props의 값이 바뀔 때 수행되는 구문
+  useEffect(() => {
+    if (isEdit) {
+      setDate(getStringDate(new Date(parseInt(originData.date))));
+      setEmotion(originData.emotion);
+      setContent(originData.content);
+    }
+  }, [isEdit, originData]);
+
   return (
     <div className="DiaryEditor">
       <MyHeader
-        headText={"새로운 일기 쓰기"}
+        headText={isEdit ? "일기 수정하기" : "새로운 일기쓰기"}
         leftChild={
           <MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />
         }

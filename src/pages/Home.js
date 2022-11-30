@@ -45,9 +45,9 @@ const Home = () => {
     }
   }, [diaryList, curDate]);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
 
   //header 영역의 ">" 버튼 클릭 시 "월" 을 증가시켜주는 메서드
   const increaseMonth = () => {
