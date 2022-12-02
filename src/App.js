@@ -73,7 +73,9 @@ const dummyData = [
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
 
-  const dataId = useRef(0);
+  // dataId의 초기값 설정 부분
+  const dataId = useRef(6);
+
   // CREATE
   const onCreate = (date, content, emotion) => {
     dispatch({
@@ -87,6 +89,7 @@ function App() {
     });
     dataId.current += 1;
   };
+
   // REMOVE
   const onRemove = (targetId) => {
     dispatch({ type: "REMOVE", targetId });

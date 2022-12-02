@@ -60,8 +60,6 @@ const DiaryEditor = ({ isEdit, originData }) => {
       }
     }
 
-    onCreate(date, content, emotion);
-
     /** navigate 파라미터 설명
      * 작성하기 버튼 클릭 시 home으로 돌아가기 전 option을 주는 구문
      * 어떤옵션인가? "새 일기쓰기" 페이지를 "뒤로가기" 버튼을 눌러 오지 못하게 막음
@@ -103,7 +101,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
           <div className="input_box emotion_list_wrapper">
             {emotionList.map((element) => (
               <EmotionItem
-                key={element.id}
+                key={element.emotion_id}
                 {...element}
                 onClick={handleClickEmote}
                 /** isSelected 설명

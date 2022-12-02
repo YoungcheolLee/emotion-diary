@@ -42,7 +42,7 @@ const DiaryList = ({ diaryList }) => {
   const navigate = useNavigate();
 
   // [최신순, 오래된순] 정렬 필터 state
-  const [sortType, setSortType] = useState();
+  const [sortType, setSortType] = useState("latest");
 
   // 감정필터에 현재 상태를 저장할 state
   const [filter, setFilter] = useState("all");
