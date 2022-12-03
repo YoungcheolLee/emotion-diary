@@ -4,13 +4,14 @@ this is a emotional diary app built with React.
 
 ## Preview
 ### `main page`
-![image](https://user-images.githubusercontent.com/107835019/205441608-43a5f498-d9bf-40dd-b16f-2e3a3078cd75.png)
+- This is the main page that will be displayed when entering the page.
 #### ⚙️fuction 
- - previous button, current date, next month button, date sort filter, emotion filter, create new diary button, diary list, edit button
+ - The weather data created in the current year and month is shown, and there is a button to change to the previous/next month.
+There is a sorting filter function based on the diary creation date and a diary sorting filter function by emotion.
  
  
 ### `new/edit diary page`
 ![image](https://user-images.githubusercontent.com/107835019/205441966-c50f71ef-7ed0-47ff-afa3-3531f9a857d9.png)
 ### ⚙️fuction
- - new diary page : back button, calendar, cansel. submit button
- - edit diary page : back button, get diary contents, calendar, cansel. submit button
+ - new diary page : There are a calendar (default today) where you can select the date you want, emotions, and a diary writing form, as well as a back button, a cancel button, and a completion button that displays the written diary content on the main page.
+ - edit diary page : When entering the edit page, first enter the data in the previously created date, emotion, and content form, and after editing, select the complete button to spread the modified data on the main page.
