@@ -4,7 +4,7 @@ this is a emotional diary app built with React.
 
 ## Preview
 ### `main page`
-- This is the main page that will be displayed when entering the page.
+- This is the main screen displayed when entering the page.
 ![image](https://user-images.githubusercontent.com/107835019/205443381-90409ca9-ae53-42a1-9c31-c5e8fff8f57e.png)
 #### ⚙️fuction 
  - The weather data created in the current year and month is shown, and there is a button to change to the previous/next month.
