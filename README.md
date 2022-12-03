@@ -2,7 +2,7 @@
 
 this is a emotional diary app built with React.
 
-## Prieview
+## Preview
 ### `main page`
 ![image](https://user-images.githubusercontent.com/107835019/205441608-43a5f498-d9bf-40dd-b16f-2e3a3078cd75.png)
 #### ⚙️fuction 
