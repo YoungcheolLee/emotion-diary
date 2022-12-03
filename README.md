@@ -12,5 +12,5 @@ this is a emotional diary app built with React.
 ### `new/edit diary page`
 ![image](https://user-images.githubusercontent.com/107835019/205441966-c50f71ef-7ed0-47ff-afa3-3531f9a857d9.png)
 ### ⚙️fuction
- - new diary : back button, calendar, cansel. submit button
- - edit diary : back button, get diary contents, calendar, cansel. submit button
+ - new diary page : back button, calendar, cansel. submit button
+ - edit diary page : back button, get diary contents, calendar, cansel. submit button
