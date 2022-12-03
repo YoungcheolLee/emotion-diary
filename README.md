@@ -14,5 +14,10 @@ There is a sorting filter function based on the diary creation date and a diary 
 ### `new/edit diary page`
 ![image](https://user-images.githubusercontent.com/107835019/205441966-c50f71ef-7ed0-47ff-afa3-3531f9a857d9.png)
 ### ⚙️fuction
- - new diary page : There are a calendar (default today) where you can select the date you want, emotions, and a diary writing form, as well as a back button, a cancel button, and a completion button that displays the written diary content on the main page.
- - edit diary page : When entering the edit page, first enter the data in the previously created date, emotion, and content form, and after editing, select the complete button to spread the modified data on the main page.
+![image](https://user-images.githubusercontent.com/107835019/205443578-e6f2b892-ff76-4591-8b26-cbe125ae17ac.png)
+new diary page
+- There are a calendar (default today) where you can select the date you want, emotions, and a diary writing form, as well as a back button, a cancel button, and a completion button that displays the written diary content on the main page.</br></br>
+
+![image](https://user-images.githubusercontent.com/107835019/205443568-b285e849-5c87-4544-8286-ad231d01ebdb.png) 
+edit diary page
+- When entering the edit page, first enter the data in the previously created date, emotion, and content form, and after editing, select the complete button to spread the modified data on the main page.
